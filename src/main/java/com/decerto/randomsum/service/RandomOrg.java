@@ -26,14 +26,16 @@ public class RandomOrg implements RandomService {
     @Override
     public BigInteger getRandomInteger() {
 
-        BigInteger random;
+        BigInteger bigInteger;
+
         try {
-            random = restTemplate.getForObject(URI.create(url), BigInteger.class);
-        } catch (RestClientException e) {
+            String random = restTemplate.getForObject(URI.create(url), String.class);
+            bigInteger = BigInteger.valueOf(Long.parseLong(random.trim()));
+        } catch (NullPointerException | NumberFormatException | RestClientException e) {
             logger.severe("Problem with random.org api, url: " + url + "\n" + e);
             throw e;
         }
 
-        return random;
+        return bigInteger;
     }
 }
