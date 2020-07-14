@@ -1,17 +1,26 @@
 package com.decerto.random.controller;
 
 
+import com.decerto.random.service.join_operator.JoinerFacade;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.math.BigInteger;
 
 @RestController
 @RequestMapping("/calculator")
 public class RandomController {
 
-    @GetMapping("/random-sum")
-    private String countRandom() {
+    private final JoinerFacade joinerFacade;
 
-        return null;
+    public RandomController(JoinerFacade joinerFacade) {
+        this.joinerFacade = joinerFacade;
+    }
+
+    @GetMapping("/random-sum")
+    private BigInteger countRandom() {
+
+        return joinerFacade.generateRandom();
     }
 }
