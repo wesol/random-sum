@@ -9,8 +9,8 @@ import java.math.BigInteger;
 @Service
 class Joiner {
 
-    private RandomService randomOrg;
-    private RandomService randomThreadApi;
+    private final RandomService randomOrg;
+    private final RandomService randomThreadApi;
 
     private Joiner(@Qualifier("randomOrg")RandomService randomOrg,
                   @Qualifier("randomFromJavaThreadApi") RandomService randomThreadApi) {
@@ -20,7 +20,6 @@ class Joiner {
     }
 
     BigInteger addUp() {
-
-        return null;
+        return randomOrg.getRandomInteger().add(randomThreadApi.getRandomInteger());
     }
 }
