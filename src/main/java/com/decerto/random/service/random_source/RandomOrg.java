@@ -1,4 +1,4 @@
-package com.decerto.random.service;
+package com.decerto.random.service.random_source;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
