@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.math.BigInteger;
 import java.net.URI;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 @Service
@@ -30,7 +31,7 @@ public class RandomOrg implements RandomService {
 
         try {
             String random = restTemplate.getForObject(URI.create(url), String.class);
-            bigInteger = BigInteger.valueOf(Long.parseLong(random.trim()));
+            bigInteger = BigInteger.valueOf(Long.parseLong(Objects.requireNonNull(random).trim()));
         } catch (NullPointerException | NumberFormatException | RestClientException e) {
             logger.severe("Problem with random.org api, url: " + url + "\n" + e);
             throw e;
