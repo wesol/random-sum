@@ -1,7 +1,7 @@
-package com.decerto.randomsum.controller;
+package com.decerto.random.controller;
 
 
-import com.decerto.randomsum.service.RandomService;
+import com.decerto.random.service.RandomService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @RequestMapping("/calculator")
-public class SumController {
+public class RandomController {
 
     private final RandomService randomService;
 
@@ -22,7 +22,7 @@ public class SumController {
     @Value("${org.random.max}")
     private int max;
 
-    private SumController(RandomService randomService) {
+    private RandomController(RandomService randomService) {
         this.randomService = randomService;
     }
 

@@ -1,4 +1,4 @@
-package com.decerto.randomsum.config;
+package com.decerto.random.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

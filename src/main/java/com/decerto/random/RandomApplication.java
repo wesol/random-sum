@@ -1,13 +1,13 @@
-package com.decerto.randomsum;
+package com.decerto.random;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RandomSumApplication {
+public class RandomApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RandomSumApplication.class, args);
+        SpringApplication.run(RandomApplication.class, args);
     }
 
 }
