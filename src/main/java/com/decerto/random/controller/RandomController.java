@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.math.BigInteger;
 
 @RestController
-@RequestMapping("/calculator")
+@RequestMapping("/randoms")
 public class RandomController {
 
     private final JoinerFacade joinerFacade;
@@ -18,7 +18,7 @@ public class RandomController {
         this.joinerFacade = joinerFacade;
     }
 
-    @GetMapping("/random-sum")
+    @GetMapping("/random")
     private BigInteger countRandom() {
 
         return joinerFacade.generateRandom();

@@ -15,7 +15,7 @@ public class JoinerFacade {
 
     private final Joiner joiner;
 
-    @Value("{service.joinManner}")
+    @Value("${service.joinManner}")
     private String joinManner;
 
     public JoinerFacade(Joiner joiner) {
