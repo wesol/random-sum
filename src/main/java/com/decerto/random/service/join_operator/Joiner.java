@@ -12,7 +12,7 @@ class Joiner {
     private final RandomService randomOrg;
     private final RandomService randomThreadApi;
 
-    private Joiner(@Qualifier("randomOrg")RandomService randomOrg,
+    private Joiner(@Qualifier("randomOrg") RandomService randomOrg,
                   @Qualifier("randomFromJavaThreadApi") RandomService randomThreadApi) {
 
         this.randomOrg = randomOrg;
