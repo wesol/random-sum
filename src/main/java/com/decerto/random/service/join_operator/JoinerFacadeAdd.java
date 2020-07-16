@@ -1,10 +1,12 @@
 package com.decerto.random.service.join_operator;
 
 
+import com.decerto.random.service.random_source.RandomService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
+import java.util.Collection;
 
 
 @Service
@@ -18,7 +20,7 @@ public class JoinerFacadeAdd implements JoinerFacade {
     }
 
     @Override
-    public BigInteger generateRandom() {
-        return joiner.addUp();
+    public BigInteger generateRandom(Collection<RandomService> values) {
+        return joiner.addUp(values);
     }
 }

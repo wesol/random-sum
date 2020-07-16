@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.logging.Logger;
 
 @Service
-public class RandomOrg implements RandomService {
+public class RandomOrg implements RandomService{
 
     private final RestTemplate restTemplate;
 
@@ -20,7 +20,7 @@ public class RandomOrg implements RandomService {
     @Value("${org.random.url}")
     private String url;
 
-    public RandomOrg(RestTemplate restTemplate) {
+    private RandomOrg(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
